@@ -9,7 +9,8 @@ const initState = {
   coFounders: '',
   stripeAmount: 0,
   imageURL: null,
-  url: ''
+  url: '',
+  category: ''
 };
 
 const newProjectReducer = (state = initState, action) => {
@@ -34,6 +35,8 @@ const newProjectReducer = (state = initState, action) => {
     return { ...state, coFounders: action.payload };
   case 'CHANGE_URL':
     return { ...state, url: action.payload };
+  case 'CHANGE_CATEGORY':
+    return { ...state, category: action.payload };
   case 'PROJECT_CREATED':
     return {
       ...state,
@@ -46,7 +49,8 @@ const newProjectReducer = (state = initState, action) => {
       technologies: '',
       coFounders: '',
       imageURL: '',
-      url: ''
+      url: '',
+      category: ''
     };
   default:
     return state;
